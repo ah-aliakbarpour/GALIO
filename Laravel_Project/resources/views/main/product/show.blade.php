@@ -186,19 +186,19 @@
                                                     <div class="pro-qty"><input name="quantity" type="text" value="1"></div>
                                                 </div>
                                                 <div class="action_link mr-3 mt-3">
-                                                    <a class="buy-btn" href="javascript:clickSubmit('add_to_cart')">add to cart<i class="fa fa-shopping-cart"></i></a>
-                                                    <form action="" method="post">
+                                                    <a class="buy-btn" href="javascript:clickSubmit('{{ 'cart_submit_' . $product->id }}')">add to cart<i class="fa fa-shopping-cart"></i></a>
+                                                    <form action="{{ route('cart.add', ['product' => $product->id]) }}" method="post">
                                                         @csrf
-                                                        <input type="submit" id="add_to_cart" name="submit" value="add_to_cart" style="display: none">
+                                                        <input type="submit" name="submit" id="{{ 'cart_submit_' . $product->id }}" value="submit" style="display: none">
                                                     </form>
                                                 </div>
                                             @endif
                                             <div class="useful-links mt-3">
-                                                <a href="javascript:clickSubmit('add_to_wishlist')" data-toggle="tooltip" data-placement="top"
+                                                <a href="javascript:clickSubmit('{{ 'wishlist_submit_' . $product->id }}')" data-toggle="tooltip" data-placement="top"
                                                 ><i class="fa fa-heart-o"></i>add to wishlist</a>
-                                                <form action="" method="post">
+                                                <form action="{{ route('wishlist.add', ['product' => $product->id]) }}" method="post">
                                                     @csrf
-                                                    <input type="submit" id="add_to_wishlist" name="submit" value="add_to_wishlist" style="display: none">
+                                                    <input type="submit" name="submit" id="{{ 'wishlist_submit_' . $product->id }}" value="submit" style="display: none">
                                                 </form>
                                             </div>
                                         </div>
