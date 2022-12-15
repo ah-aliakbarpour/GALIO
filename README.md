@@ -1,2 +1,2 @@
-# GALIO | Laravel
-GALIO is an E-commerce website.
+# GALIO
+E-commerce website written in Laravel.
